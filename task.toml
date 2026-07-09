@@ -1,0 +1,26 @@
+artifacts = [
+  "/app/results/predictions.normalized.jsonl",
+  "/app/results/evaluation_report.json"
+]
+
+[task]
+name = "offline-nlp-ticket-triage-evaluation-repair"
+description = "Repair and complete an offline NLP ticket-triage evaluation pipeline with label normalization, abstention handling, duplicate prediction resolution, and deterministic metrics."
+
+[metadata]
+category = "machine_learning_and_ai"
+subcategory = "nlp_and_language_models"
+task_objective = ["debug", "transform", "validate", "analyze"]
+artifact_type = ["dataset_or_tabular_file", "single_script_or_program", "generated_output_artifact"]
+
+[verifier]
+timeout_sec = 600
+
+[agent]
+timeout_sec = 3600
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+mcp_servers = []
